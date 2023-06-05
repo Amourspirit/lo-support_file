@@ -92,6 +92,28 @@ For Instance:
 pip install ooo-dev-tools
 ```
 
+## Post Installation
+
+After Activating the virtual environment the following commands should be run to ensure the virtual environment is configured correctly.
+
+Ensure pip is up to date.
+
+```powershell
+pip install --upgrade pip
+```
+
+Ensure `oooenv` is up to date.
+
+```powershell
+pip install --upgrade oooenv
+```
+
+Run `oooenv` update command to ensure the virtual environment is configured correctly.
+
+```powershell
+oooenv update --update
+```
+
 ## Other Resources
 
 - [OOO Development Tools](https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html)
