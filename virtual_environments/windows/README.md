@@ -2,13 +2,15 @@
 
 This directory contains pre-configured virtual environments for LibreOffice on Windows.
 
-While it is possible to create a virtual environment for LibreOffice on Windows, it is not a straight forward process. The virtual environments in this directory are pre-configured to work with LibreOffice on Windows.
+While it is possible to create a virtual environment for LibreOffice on Windows, it is not a straight forward process.
+Normally it involves installing a python environment that matches the python environment in LibreOffice and then creating a virtual environment using that python environment, and then modifing the virtual environment to work with LibreOffice.
+The virtual environments in this directory are pre-configured to work with LibreOffice on Windows.
 
 ## Requirements
 
 LibreOffice that uses python 3.8 or later is required to use the virtual environments.
 
-Python version can be checked by running the following command in LibreOffice.
+Python version can be checked by running the following command in PowerShell.
 
 ```powershell
 >&"C:\Program Files\LibreOffice\program\python.exe" --version
@@ -28,27 +30,6 @@ Extract the archive to the current directory.
 ```powershell
 Expand-Archive -Path <path-to-archive> -DestinationPath .
 ```
-
-## OOOENV
-
-[oooenv](https://pypi.org/project/oooenv/) is a tool that allows you to use virtual environments in a dual way. Environment can be used as a virtual environment for LibreOffice or as a normal python environment.
-
-When a virtual environment is using [Poetry](https://python-poetry.org/) it will not be possible to use poetry commands while the virtual environment is pointed to LibreOffice. To work around this, the virtual environment can be toggled between LibreOffice and normal python environment.
-
-The command to toggle the virtual environment:
-
-```powershell
-oooenv env -t
-Set to Original Environment
-```
-
-Running the command again will toggle the virtual environment back to LibreOffice.
-
-```powershell
-oooenv env -t
-Set to UNO Environment
-```
-
 
 ## Available virtual environments
 
@@ -102,6 +83,8 @@ Ensure pip is up to date.
 pip install --upgrade pip
 ```
 
+[oooenv](https://pypi.org/project/oooenv/) is a tool that amongst other things allows you to update the virtual environment to match the python environment in LibreOffice.
+
 Ensure `oooenv` is up to date.
 
 ```powershell
@@ -116,5 +99,5 @@ oooenv update --update
 
 ## Other Resources
 
-- [OOO Development Tools](https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html)
+- [OOO Development Tools (OooDev)](https://python-ooo-dev-tools.readthedocs.io/en/latest/index.html)
 - [Poetry](https://python-poetry.org/)
